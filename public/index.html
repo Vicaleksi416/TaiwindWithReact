@@ -1,43 +1,242 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
-
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tailwind & React Practice</title>
+    <link rel="stylesheet" href="styles/output.css" />
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+    <body class="text-gray-600 font-nunito">
+      <div class="grid md:grid-cols-12">
+        <div class="md:col-span-2">
+          <!--Start Nav-->
+          <nav>
+            <div
+              class="border-b border-black-200 flex justify-between items-center"
+            >
+              <h1 class="font-bold uppercase p-4">
+                <a href="#" class="text-sm md:text-2xl hover:text-gray-500"
+                  >Food Recipes</a
+                >
+              </h1>
+              <div>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="w-6 h-6 md:hidden m-4"
+                  id="menu"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                  />
+                </svg>
+              </div>
+            </div>
+            <ul
+              class="fixed w-screen bg-white flex opacity-0 justify-around md:flex-col md:relative md:w-fit md:opacity-100 transition-opacity duration-500"
+              id="pages"
+            >
+              <li class="lists">
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5 inline-block"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                    />
+                  </svg>
+                  <span>Home</span>
+                </a>
+              </li>
+              <li class="lists">
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5 inline-block"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+                    />
+                  </svg>
+                  <span>About</span>
+                </a>
+              </li>
+              <li class="lists">
+                <a href="#">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5 inline-block"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"
+                    />
+                  </svg>
+                  <span>Contact</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <!--End Nav-->
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+        <main class="px-16 py-16 bg-gray-100 md:col-span-10">
+          <div class="flex justify-center md:justify-end">
+            <a href="#" class="btn">Log in</a>
+            <a href="#" class="btn ml-2">Sign up</a>
+          </div>
+
+          <header>
+            <h2 class="text-gray-700 text-6xl font-semibold pb-4">Recipes</h2>
+            <h3 class="text-2xl font-semibold">Jibber jabber</h3>
+          </header>
+
+          <div>
+            <h4
+              class="text-2xl font-bold mt-12 pb-2 border-b-2 border-gray-200"
+            >
+              Latest Recipe
+            </h4>
+
+            <div class="mt-8 grid xl:grid-cols-3 gap-10">
+              <!--  cards go here-->
+              <div class="card">
+                <img
+                  class="w-full h-48 sm:h-96 object-cover"
+                  src="img/1.jpg"
+                  alt=""
+                />
+                <div class="p-6">
+                  <span class="mb-2 block font-bold text-2xl"
+                    >Titles titles</span
+                  >
+                  <span class="block text-xl">Recipe by Abcde</span>
+                </div>
+                <div class="badge">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5 inline-block"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                    />
+                  </svg>
+                  <span>25 mins</span>
+                </div>
+              </div>
+              <!--  cards go here-->
+              <div class="card">
+                <img
+                  class="w-full h-48 sm:h-96 object-cover"
+                  src="img/2.jpg"
+                  alt=""
+                />
+                <div class="p-6">
+                  <span class="mb-2 block font-bold text-2xl"
+                    >Titles titles</span
+                  >
+                  <span class="block text-xl">Recipe by Abcde</span>
+                </div>
+                <div class="badge">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5 inline-block"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                    />
+                  </svg>
+                  <span>25 mins</span>
+                </div>
+              </div>
+              <!--  cards go here-->
+              <div class="card">
+                <img
+                  class="w-full h-48 sm:h-96 object-cover"
+                  src="img/3.jpg"
+                  alt=""
+                />
+                <div class="p-6">
+                  <span class="mb-2 block font-bold text-2xl"
+                    >Titles titles</span
+                  >
+                  <span class="block text-xl">Recipe by Abcde</span>
+                </div>
+                <div class="badge">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-5 h-5 inline-block"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                    />
+                  </svg>
+                  <span>25 mins</span>
+                </div>
+              </div>
+            </div>
+
+            <h4
+              class="text-2xl font-bold mt-12 pb-2 border-b-2 border-gray-200"
+            >
+              Most Popular
+            </h4>
+
+            <div class="mt-8">
+              <!--  cards go here-->
+            </div>
+
+            <div class="flex justify-center">
+              <div class="btn">Load more</div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </body>
+    <script src="../src/index.js" type="text.jsx"></script>
   </body>
 </html>
